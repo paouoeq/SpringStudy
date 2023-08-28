@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 이전방식의 UserService xxx = new UserService();와 동일 -->
+	<bean id="xxx" class="com.service.UserService">
+	</bean>
+	
+	<!-- num 파라미터에 값 주입
+		  이전방식의 UserService xxx = new UserService(10);와 동일  -->
+	<bean id="yyy" class="com.service.UserService">
+		<constructor-arg value="10"></constructor-arg>
+	</bean>
+	
+	<!-- 데이터타입을 명시할 수 있음 -->
+	<bean id="yyy2" class="com.service.UserService">
+		<constructor-arg type="int" value="10"></constructor-arg>
+	</bean>
+	
+</beans>

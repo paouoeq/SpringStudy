@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="service" class="com.service.UserService4">
+		<property name="phones"> <!-- set을 catList에 주입 -->
+			<props>
+				<prop key="phone1">01012345678</prop>
+	            <prop key="phone2">01099998888</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>

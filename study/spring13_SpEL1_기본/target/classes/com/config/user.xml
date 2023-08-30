@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<bean id="p1" class="com.dto.Person">
+		<property name="username" value="홍길동"></property>
+		<property name="age" value="2"></property>
+		<property name="married" value="true"></property>
+		<property name="height" value="178.2"></property>
+	</bean>
+	
+	<bean id="p2" class="com.dto.Person">
+		<property name="username" value="#{'이순신'}"/> <!-- SpEL 표현식 - 일반값 -->
+		<property name="age" value="#{2+1}"/> <!-- SpEL 표현식 - 산술연산자 -->
+		<property name="married" value="#{10>3}"/> <!-- SpEL 표현식 - 비교연산자 -->
+		<property name="height" value="#{10>3?180.1:150.5}"/> <!-- SpEL 표현식 - 3항연산자 -->
+	</bean>
+</beans>

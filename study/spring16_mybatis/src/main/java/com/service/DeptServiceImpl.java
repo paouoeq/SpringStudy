@@ -8,15 +8,31 @@ import org.springframework.stereotype.Service;
 import com.dao.DeptDAO;
 import com.dto.DeptDTO;
 
-@Service("service")
-public class DeptServiceImpl implements DeptService {
-
+@Service("deptService")
+public class DeptServiceImpl implements DeptService{
+	
 	@Autowired
-	DeptDAO dao;
+	DeptDAO dao; // 마킹을 통해 빈 등록했음 -> autowired로 dao 생성 가능
 
 	@Override
-	public List<DeptDTO> findAll() {
-		return dao.findAll();
+	public List<DeptDTO> deptList() {
+		return dao.deptList();
+	}
+
+	// 스프링에서는 DML 작업시 자동으로 commit 된다.
+	@Override
+	public int deptAdd(DeptDTO dto) {
+		return dao.deptAdd(dto);
+	}
+
+	@Override
+	public int deptUpdate(DeptDTO dto) {
+		return dao.deptUpdate(dto);
+	}
+
+	@Override
+	public int deptDelete(int deptno) {
+		return dao.deptDelete(deptno);
 	}
 
 }

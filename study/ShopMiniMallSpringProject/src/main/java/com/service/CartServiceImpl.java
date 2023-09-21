@@ -36,7 +36,7 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public int cartDeleteAll(List<String> num) {
-		return cartDeleteAll(num);
+		return dao.cartDeleteAll(num);
 	}
 
 	

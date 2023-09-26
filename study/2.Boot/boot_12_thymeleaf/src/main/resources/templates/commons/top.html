@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>top.html</h1>
+<!-- 로그인 전에는 로그인을 보여주고, 로그인 후에는 로그아웃을 보여준다. -->
+<div th:fragment="login-fragment"> <!-- 임의의값 설정하면 됨 -->
+	<span>로그인</span>
+	<span>회원가입</span>
+</div>
+
+<div th:fragment="logout-fragment">
+	<span>로그아웃</span>
+	<span>마이페이지</span>
+</div>
+
+</body>
+</html>
